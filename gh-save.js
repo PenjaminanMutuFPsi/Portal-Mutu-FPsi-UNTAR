@@ -8,7 +8,7 @@ window.GHSave=function(name,get,anchorId){
  var b=document.createElement("button");b.type="button";b.textContent="\u2601 Simpan ke GitHub";b.style.display="none";
  var s=document.createElement("span");s.style.cssText="font-size:12.5px;margin-left:8px";s.setAttribute("role","status");
  a.insertAdjacentElement("afterend",b);b.insertAdjacentElement("afterend",s);
- function adm(){try{return localStorage.getItem("adm_ok")==="1"}catch(e){return false}}
+ function adm(){try{return !!localStorage.getItem("adm_ok")}catch(e){return false}}
  setInterval(function(){b.style.display=adm()?"":"none";if(!adm())s.textContent=""},400);
  function say(m,bad){s.textContent=m;s.style.color=bad?"#c0392b":"inherit"}
  function tok(){try{return localStorage.getItem("gh_token")}catch(e){return null}}
